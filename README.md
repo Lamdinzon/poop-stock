@@ -52,6 +52,20 @@ Output directory 是 `dist`。記得在平台的環境變數設定加上：
 VITE_API_BASE=https://你的後端網址.onrender.com
 ```
 
+### 前端 → Railway（另一個選擇）
+
+Railway 不像 Vercel 那樣天生懂靜態網站，需要用 `npm run start` 把build好的
+檔案serve出來，這個repo已經把這個指令準備好了：
+
+1. Railway 新建服務時選這個repo，**Root Directory** 設成 `frontend`
+2. Build Command：`npm run build`
+3. Start Command：`npm run start`（會用 `vite preview` 把 `dist/` serve出來）
+4. 環境變數加上 `VITE_API_BASE=你的後端網址`
+   **注意**：這個變數要在「build之前」就設定好，因為 Vite 是在build時把
+   環境變數寫進打包好的JS檔案裡，build完才設定是沒有用的
+5. Railway 會自動注入 `PORT` 環境變數，`npm run start` 已經吃這個變數了，
+   不用額外設定
+
 ## 資料來源
 
 - 證交所 OpenAPI（`openapi.twse.com.tw`）：收盤價、本益比、月營收、EPS
