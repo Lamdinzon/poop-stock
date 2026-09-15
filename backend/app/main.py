@@ -16,11 +16,16 @@ app = FastAPI(
 # 允許的前端網域從環境變數讀，用逗號分隔多個網址。
 # 本機開發預設放行 Vite 的 5173，部署到正式環境時
 # 用 FRONTEND_ORIGINS 環境變數加上正式前端網址，不用改程式碼。
+def _clean_origin(raw: str) -> str:
+    value = raw.strip().strip('"').strip("'").strip()
+    return value.rstrip("/")  # 網址結尾的斜線也順便去掉，避免比對不到
+
+
 default_origins = "http://localhost:5173,http://127.0.0.1:5173"
 origins = [
-    origin.strip()
+    _clean_origin(origin)
     for origin in os.environ.get("FRONTEND_ORIGINS", default_origins).split(",")
-    if origin.strip()
+    if _clean_origin(origin)
 ]
 
 app.add_middleware(
