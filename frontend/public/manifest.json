@@ -1,0 +1,28 @@
+{
+  "name": "便盤所",
+  "short_name": "便盤所",
+  "description": "拍一張照片，換一支今日精選台股，還有一句只有你懂的開盤評語。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eaf0ee",
+  "theme_color": "#16302b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
