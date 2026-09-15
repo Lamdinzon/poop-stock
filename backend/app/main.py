@@ -21,6 +21,11 @@ def _clean_origin(raw: str) -> str:
     return value.rstrip("/")  # 網址結尾的斜線也順便去掉，避免比對不到
 
 
+def _clean_origin(raw: str) -> str:
+    value = raw.strip().strip('"').strip("'").strip()
+    return value.rstrip("/")  # 網址結尾的斜線也順便去掉，避免比對不到
+
+
 default_origins = "http://localhost:5173,http://127.0.0.1:5173"
 origins = [
     _clean_origin(origin)

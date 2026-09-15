@@ -177,10 +177,10 @@ export default function App() {
         <p className="hero__eyebrow">開盤鈴聲響了</p>
         <h1 className="hero__title">
           上班第一件事，<br />
-          先看今天<em>開盤</em>。
+          拉個屎<em>看開盤</em>。
         </h1>
         <p className="hero__subtitle">
-          拍一張照片，換一支今日精選台股，還有一句只有你懂的開盤評語。
+          拍一張照片，換一支今日精選台股，還有一句只有你懂的開盤評語。<br />
           純娛樂，不是醫療診斷，也不是投資建議。
         </p>
       </header>
